@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}WorkHub{% endblock %}</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+
+    <!-- Navbar -->
+    <header class="bg-white border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+
+            <h1 class="text-2xl font-bold text-indigo-600">
+                WorkHub
+            </h1>
+
+            <nav class="flex items-center gap-6 text-sm font-medium">
+                <a href="{% url 'dashboard' %}"
+                   class="hover:text-indigo-600">
+                    Dashboard
+                </a>
+
+                <a href="{% url 'ticket_create' %}"
+                   class="hover:text-indigo-600">
+                    Create Ticket
+                </a>
+
+                <a href="{% url 'ticket_list' %}"
+                   class="hover:text-indigo-600">
+                    All Tickets
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-10">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-slate-500 py-6">
+        © 2026 WorkHub. All rights reserved.
+    </footer>
+
+</body>
+</html>
